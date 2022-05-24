@@ -4,6 +4,7 @@ import com.sreenath.employeepayrollapp.dto.EmployeePayrollDTO;
 import com.sreenath.employeepayrollapp.dto.ResponseDTO;
 import com.sreenath.employeepayrollapp.model.EmployeePayrollData;
 import com.sreenath.employeepayrollapp.service.IEmployeePayrollService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/employeepayroll")
+@Slf4j
 public class EmployeePayrollRestController {
 
     @Autowired
@@ -36,6 +38,7 @@ public class EmployeePayrollRestController {
 
     @PostMapping("/create")
     public ResponseEntity<ResponseDTO> createEmployeePayrollData(@Valid @RequestBody EmployeePayrollDTO employeePayrollDTO) {
+        log.debug("Employee DTO : " + employeePayrollDTO.toString());
         EmployeePayrollData employeePayrollData = iEmployeePayrollService.createEmployeePayrollData(employeePayrollDTO);
         ResponseDTO responseDTO = new ResponseDTO("Created Employee Payroll Data", employeePayrollData);
         return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
