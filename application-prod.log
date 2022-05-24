@@ -1,0 +1,6 @@
+2022-05-24 08:47:04.683 [INFO] [restartedMain] [c.s.e.EmployeePayrollApplication:55] Starting EmployeePayrollApplication using Java 17.0.1 on LAPTOP-23M52PMF with PID 51068 (C:\Users\sreen\Desktop\SpringBoot\EmployeePayrollApp\target\classes started by root in C:\Users\sreen\Desktop\SpringBoot\EmployeePayrollApp)
+2022-05-24 08:47:04.683 [DEBUG] [restartedMain] [c.s.e.EmployeePayrollApplication:56] Running with Spring Boot v2.7.0, Spring v5.3.20
+2022-05-24 08:47:04.683 [INFO] [restartedMain] [c.s.e.EmployeePayrollApplication:640] The following 1 profile is active: "prod"
+2022-05-24 08:47:06.916 [WARN] [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-24 08:47:07.170 [INFO] [restartedMain] [c.s.e.EmployeePayrollApplication:61] Started EmployeePayrollApplication in 2.855 seconds (JVM running for 3.564)
+2022-05-24 08:47:07.186 [INFO] [restartedMain] [c.s.e.EmployeePayrollApplication:14] Employee Payroll App started in PROD environment
