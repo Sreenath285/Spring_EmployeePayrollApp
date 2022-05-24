@@ -1,6 +1,7 @@
 package com.sreenath.employeepayrollapp.service;
 
 import com.sreenath.employeepayrollapp.dto.EmployeePayrollDTO;
+import com.sreenath.employeepayrollapp.exceptions.EmployeePayrollCustomException;
 import com.sreenath.employeepayrollapp.model.EmployeePayrollData;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +20,10 @@ public class EmployeePayrollService implements IEmployeePayrollService{
 
     @Override
     public EmployeePayrollData getEmployeePayrollDataById(int employeeId) {
-        return employeePayrollDataList.get(employeeId - 1);
+        return employeePayrollDataList.stream()
+                                      .filter(employeePayrollData -> employeePayrollData.getEmployeeId() == employeeId)
+                                      .findFirst()
+                                      .orElseThrow(() -> new EmployeePayrollCustomException("Employee not found"));
     }
 
     @Override
